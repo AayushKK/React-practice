@@ -1,14 +1,18 @@
-import Navbar from "../components/Navbar";
+
+import DispalySection from "../components/DispalySection";
+import Tech from "../components/Tech";
+
+
 
 const Home = () => {
 
 
   return (
-    <>
-      <Navbar />
-      <h1>Home Page</h1>
-      <p>Welcome to the Home Page!</p>
-    </>
+    <div className='px-10'>
+      <DispalySection />
+      <Tech />
+    </div>
+
   );
 };
 

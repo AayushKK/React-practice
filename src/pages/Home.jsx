@@ -1,19 +1,27 @@
 
-import DispalySection from "../components/DispalySection";
-import Info from "../components/Info";
-import Tech from "../components/Tech";
+import { Button, Typography } from "@material-tailwind/react";
+import { TestimonialCard } from "../components/TestimonialCard";
 
 
 
 const Home = () => {
-
-
+  let count = 0;
+  const increment = () => {
+    count++;
+  }
+  const person = ['ram', 'shyam', 'hari'];
   return (
-    <div className='px-10'>
-      <DispalySection />
-      <Tech />
-      <Info />
-    </div>
+    <>
+      <div>
+        <TestimonialCard />
+        <Typography variant='h3'>{count}</Typography>
+
+      </div>
+      <Button
+      >Click Me</Button>
+      {console.log(person)}
+
+    </>
 
   );
 };

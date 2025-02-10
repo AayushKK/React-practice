@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -72,9 +73,39 @@ import { faker } from '@faker-js/faker';
 //   },
 // ];
 import { Button, Rating, Typography } from '@material-tailwind/react'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect } from 'react'
 import { useState } from 'react';
+
 const Home = () => {
+
+  // axios.get('https://jsonplaceholder.typicode.com/posts').then((val) => { console.log(val.data) }).catch((err) => { console.log(err) }).finally(() => {
+  //   console.log('hello users')
+  // });
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
+  const [err, setError] = useState(false);
+  const getData = async () => {
+    setLoading(true)
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+      console.log(response.data)
+      setLoading(false);
+      setError(false);
+      setData((prev) => response.data)
+    } catch (err
+    ) {
+
+      setError(err.message)
+      setLoading(false);
+
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, [])
+
   const [display, setDisplay] = useState(false);
   const recipes = [
     {
@@ -140,6 +171,13 @@ const Home = () => {
   ]
 
 
+  if (loading) {
+    return <h1>Loadding</h1>
+  }
+  if (err) {
+    return <h1>{err.message}</h1>
+  }
+
   return (
     <div className='p-5 space-y-3' >
       <Typography variant='h2'>Recipes Listings</Typography>
@@ -173,6 +211,15 @@ const Home = () => {
 
           </div>
         })}
+      <>
+        {data && data.map((post) => {
+          return <div key={post.id}>
+            <h1>{post.title}</h1>
+            <h2>{post.body}</h2>
+            <hr className='h-10' />
+          </div>
+        })}
+      </>
 
     </div >
   )

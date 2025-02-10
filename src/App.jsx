@@ -4,6 +4,9 @@ import Home from "./pages/Home"
 import { Contact } from "./pages/Contact"
 
 import RootLayout from "./components/RootLayout"
+import { DataShow } from "./pages/DataShow"
+import ItemList from "./pages/ItemList"
+import ItemDetail from "./pages/ItemDetail"
 
 
 
@@ -27,6 +30,18 @@ export const App = () => {
         {
           path: 'contact',
           element: <Contact />
+        },
+        {
+          path: 'datashow',
+          element: <DataShow />
+        },
+        {
+          path: 'categories-items/:label',
+          element: <ItemList />,
+        },
+        {
+          path: 'item-detail/:id',
+          element: <ItemDetail />,
         }
       ]
     },

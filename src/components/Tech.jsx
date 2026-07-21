@@ -1,10 +1,10 @@
 import React from 'react'
-import { DiCss3, DiJavascript, DiNodejs, DiPython, DiReact } from "react-icons/di";
+import { DiCss3, DiJavascript, DiLaravel, DiNodejs, DiPython, DiReact } from "react-icons/di";
 const Tech = () => {
   return (
     <div >
 
-      <h1 className='text-4xl font-bold text-center underline underline-offset-4'>Technologies I use</h1>
+      <h1 className='text-4xl text-gray-800 font-bold text-center underline underline-offset-4'>Technologies I use</h1>
 
       <div className='grid grid-cols-4 gap-y-9 my-7 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-items-center'>
 
@@ -35,6 +35,10 @@ const Tech = () => {
           size={170}
           title='python' />
 
+        <DiLaravel
+          size={170}
+          title='Laravel'
+          className="hover:scale-125 hover:text-red-500 transition-transform duration-300" />
       </div>
 
     </div>

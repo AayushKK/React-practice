@@ -11,7 +11,7 @@ const DispalySection = () => {
 
       </div>
       <div className=' space-y-4'>
-        <h1 className='text-3xl font-bold'>Hi, I am Aayush Kharel</h1>
+        <h1 className='text-3xl font-bold text-gray-800'>Hi, I am Aayush Kharel</h1>
 
         <p className='text-lg text-pink-500'>Web Developer, Freelancer, </p>
         <p className="text-md ">I am a passionate web developer dedicated to turning ideas into seamless digital experiences. With a strong foundation in modern web technologies like React, Vite, and Tailwind CSS, I create responsive, user-friendly websites and applications that combine functionality with design. I thrive on solving problems, learning new tools, and continuously improving my craft to deliver projects that not only work but delight users. Every line of code I write is aimed at building interactive, engaging, and efficient solutions that make an impact.
